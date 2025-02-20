@@ -1,7 +1,0 @@
-@mixin bg-blur() {
-  background-color: #ffffffb5;
-  -webkit-backdrop-filter: blur(23px);
-  /* Add this line first, it fixes blur for Safari*/
-  backdrop-filter: blur(23px);
-  /* This line activates blur*/
-}
