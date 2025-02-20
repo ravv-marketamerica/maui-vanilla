@@ -1,0 +1,21 @@
+// JIRA ID
+$id: "#" + $env-jira-id;
+
+// Images
+$image-base-url: $env-image-base-url;
+$image-webp-test-url: "data:image/webp;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+$image-avif-test-url: "data:image/avif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+// Fonts
+$font-family: "Montserrat", sans-serif;
+$font-size: 16px;
+$text-xs: 0.75rem;
+$text-sm: 1rem;
+$text-md: 1.25rem;
+$text-lg: 1.5rem;
+$text-xl: 1.75rem;
+
+// Colors
+$color-primary: #fff;
+$color-secondary: #000;
+$color-tertiary: #9da2a6;

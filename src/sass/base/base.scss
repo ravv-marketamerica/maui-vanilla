@@ -1,0 +1,33 @@
+/*--- Base ---*/
+
+/* layered site fixes */
+:not(style):not(link):not(meta):not(script) ~ section {
+  margin-top: 0;
+}
+
+/* UF fixes*/
+header + main {
+  margin-top: 0 !important;
+}
+
+.s-footer {
+  margin-top: 0 !important;
+}
+
+/* for SHOP.COM */
+.subheader-nav {
+  margin-bottom: 0 !important;
+}
+
+#footer .link-to .link-to-page {
+  height: auto !important;
+}
+
+#footer .link-to .link-to-page button,
+#footer .link-to .link-to-page label.label {
+  white-space: normal !important;
+}
+
+#{$id} .marg-6top {
+  margin-bottom: -6px;
+}

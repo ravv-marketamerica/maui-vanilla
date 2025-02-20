@@ -1,0 +1,23 @@
+// abstracts
+@import "./src/sass/abstracts/fonts";
+@import "./src/sass/abstracts/variables.scss";
+@import "./src/sass/abstracts/mixins.scss";
+
+// base
+@import "./src/sass/base/reset.scss";
+@import "./src/sass/base/base.scss";
+
+// layouts
+@import "./src/sass/layouts/hero.scss";
+@import "./src/sass/layouts/banner.scss";
+@import "./src/sass/layouts/prod-card.scss";
+@import "./src/sass/layouts/prod-card-left.scss";
+@import "./src/sass/layouts/prod-card-right.scss";
+@import "./src/sass/layouts/prod-showcase.scss";
+@import "./src/sass/layouts/collection.scss";
+
+// // utilities
+// // @import "./src/sass/utilities/align-justify.scss";
+// // @import "./src/sass/utilities/display.scss";
+// // @import "./src/sass/utilities/spacing.scss";
+// // @import "./src/sass/utilities/text-align.scss";
