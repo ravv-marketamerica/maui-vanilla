@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve --mode dev",
-    "build": "vite build --mode prod-uf",
-    "build-layered": "vite build --mode prod-layered",
+    "build": "vite build --mode prod-shop",
+    "build-ly": "vite build --mode prod-layered",
     "build-uf": "vite build --mode prod-uf",
-    "build-shop": "vite build --mode prod-shop",
-    "build-all": "npm run build-layered && npm run build-shop && npm run build-uf",
+    "build-sh": "vite build --mode prod-shop",
+    "build-all": "npm run build-ly && npm run build-sh && npm run build-uf",
     "start": "vite preview --mode prod-uf"
   },
   "devDependencies": {
