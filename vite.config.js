@@ -16,6 +16,7 @@ import viteCssAtSupportInjector from "./plugins/vite-plugin-css-@support-injecto
 import viteCssAtSupportOptimizer from "./plugins/vite-plugin-css-@support-optimizer";
 import viteCssMediaQueryInjector from "./plugins/vite-plugin-css-media-query-injector";
 import viteCopyHtmlToDeliverables from "./plugins/vite-plugin-copy-html-to-deliverables";
+import viteJsInline from "./plugins/vite-plugin-js-inline";
 
 export default defineConfig(({ command, mode }) => {
   // Load environment variables from .env file
@@ -61,6 +62,9 @@ export default defineConfig(({ command, mode }) => {
         minify: false,
       }),
       viteSingleFile(),
+      viteJsInline({
+        minify: false,
+      }),
       viteCssMediaQueryExtractor(),
       viteCssMediaQueryOptimizer(),
       viteCssMediaQueryInjector(),

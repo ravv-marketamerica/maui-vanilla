@@ -5,23 +5,23 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve --mode dev",
-    "build": "vite build --mode prod-shop",
+    "build": "vite build --mode dev",
     "build-ly": "vite build --mode prod-layered",
     "build-uf": "vite build --mode prod-uf",
     "build-sh": "vite build --mode prod-shop",
     "build-all": "npm run build-ly && npm run build-sh && npm run build-uf",
-    "start": "vite preview --mode prod-uf"
+    "start": "vite preview --mode dev"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.4",
     "postcss": "^8.5.2",
     "sass-embedded": "^1.83.4",
+    "terser": "^5.39.0",
     "vite": "^6.0.5",
     "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-html": "^3.2.2",
-    "vite-plugin-singlefile": "^2.1.0"
-  },
-  "dependencies": {
+    "vite-plugin-singlefile": "^2.1.0",
     "sharp": "^0.33.5"
-  }
+  },
+  "dependencies": {}
 }
