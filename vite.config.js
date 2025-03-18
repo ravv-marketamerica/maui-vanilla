@@ -72,10 +72,16 @@ export default defineConfig(({ command, mode }) => {
       viteCssAtSupportOptimizer(),
       viteCssAtSupportInjector(),
       viteCssPictureTransformer(),
+      viteHtmlCleanup(),
+      viteHtmlPrettier({
+        htmlFile: "index.html",
+        prettierOptions: {
+          printWidth: 120,
+        },
+      }),
       viteHtmlRenamer({
         newName: env.VITE_OUTPUT_FILE_NAME,
       }),
-      viteHtmlCleanup(),
       viteCopyHtmlToDeliverables(),
     ],
   };

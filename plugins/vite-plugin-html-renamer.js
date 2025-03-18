@@ -23,9 +23,7 @@ function viteHtmlRenamer(options = {}) {
       order: "post",
       async handler() {
         try {
-          console.log(
-            "[html-renamer] Waiting for CSS injection to complete..."
-          );
+          console.log("[html-renamer] Waiting for previous to complete...");
 
           const distPath = process.cwd();
           const htmlPath = path.join(distPath, config.distDir, "index.html");
