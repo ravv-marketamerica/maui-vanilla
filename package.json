@@ -7,9 +7,9 @@
     "dev": "vite serve --mode dev",
     "build": "vite build --mode dev",
     "start": "vite preview --mode dev",
-    "build:ly": "vite build --mode prod-layered",
-    "build:uf": "vite build --mode prod-uf",
-    "build:sh": "vite build --mode prod-shop",
+    "build:ly": "vite build --mode prod.layered.eng",
+    "build:uf": "vite build --mode prod.uf.eng",
+    "build:sh": "vite build --mode prod.shop.eng",
     "build:all": "npm run build:ly && npm run build:sh && npm run build:uf"
   },
   "devDependencies": {

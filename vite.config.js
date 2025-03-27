@@ -42,6 +42,7 @@ export default defineConfig(({ command, mode }) => {
           additionalData: `
           $env-image-base-url: "${env.VITE_IMAGE_BASE_URL}";
           $env-jira-id: "${env.VITE_JIRA_ID}";
+          $env-lang: "${env.VITE_LANG}";
           `,
         },
       },
