@@ -17,6 +17,7 @@ import viteCssAtSupportInjector from "./plugins/vite-plugin-css-@support-injecto
 import viteCssAtSupportOptimizer from "./plugins/vite-plugin-css-@support-optimizer";
 import viteCssMediaQueryInjector from "./plugins/vite-plugin-css-media-query-injector";
 import viteCopyHtmlToDeliverables from "./plugins/vite-plugin-copy-html-to-deliverables";
+import viteHtmlPrettier from "./plugins/vite-plugin-html-prettier";
 
 export default defineConfig(async ({ command, mode }) => {
   // Load environment variables from .env file
@@ -75,10 +76,16 @@ export default defineConfig(async ({ command, mode }) => {
       viteCssAtSupportOptimizer(),
       viteCssAtSupportInjector(),
       viteCssPictureTransformer(),
+      viteHtmlCleanup(),
+      viteHtmlPrettier({
+        htmlFile: "index.html",
+        prettierOptions: {
+          printWidth: 120,
+        },
+      }),
       viteHtmlRenamer({
         newName: env.VITE_OUTPUT_FILE_NAME,
       }),
-      viteHtmlCleanup(),
       viteCopyHtmlToDeliverables(),
     ],
   };

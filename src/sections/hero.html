@@ -15,4 +15,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Gallery Script -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get all slides
+      const slides = document.querySelectorAll('.gallery-slide');
+      let currentSlide = 0;
+
+      // Auto slide change every 4 seconds
+      setInterval(() => {
+        let nextSlide = (currentSlide + 1) % slides.length;
+
+        // Remove active class from all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+
+        // Add active class to next slide
+        slides[nextSlide].classList.add('active');
+
+        // Update current slide index
+        currentSlide = nextSlide;
+      }, 2500);
+    });
+  </script>
 </section>
