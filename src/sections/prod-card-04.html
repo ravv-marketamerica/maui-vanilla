@@ -1,0 +1,26 @@
+<section class="product-card prod-card-right">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 noPadding">
+        <picture>
+          <img src="{{image_base_url}}/sm/model-ava-sm.jpg" data-index="0" loading="lazy"
+            alt="Model wearing Ava earrings" itemprop="image">
+        </picture>
+      </div>
+      <div class="col-12 col-md-6 p-5 d-flex flex-column justify-content-center align-items-center text-center">
+        <a href="%VITE_PROD_04_URL%">
+          <picture>
+            <img src="{{image_base_url}}/sm/prod-ava-sm.jpg" data-index="0" loading="lazy"
+              alt="Dainty Freshwater Pearl Drop Lariat Necklace" itemprop="image">
+          </picture>
+        </a>
+        <div class="prod-description">
+          <h3>{{ products.3.name_text }}</h3>
+          <p>{{ products.3.desc_text }}</p>
+          <p class="prod-material">{{ products.3.mat_text }}</p>
+        </div>
+        <a class="btn btn-primary" href="%VITE_PROD_04_URL%">{{ prod_cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</section>

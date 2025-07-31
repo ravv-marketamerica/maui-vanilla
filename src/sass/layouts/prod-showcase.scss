@@ -1,0 +1,112 @@
+/*--- Prod Showcase  ---*/
+
+// mobile
+$image-url-sm: $image-base-url + "/sm//background-sm.jpg";
+$image-url-sm-webp: $image-base-url + "/sm/background-sm.webp";
+$image-url-sm-avif: $image-base-url + "/sm/background-sm.avif";
+
+// tablet
+$image-url-md: $image-base-url + "/md//background-md.jpg";
+$image-url-md-webp: $image-base-url + "/md/background-md.webp";
+$image-url-md-avif: $image-base-url + "/md/background-md.avif";
+
+// large screens
+$image-url-lg: $image-base-url + "/lg/background-lg.jpg";
+$image-url-lg-avif: $image-base-url + "/lg/background-lg.avif";
+$image-url-lg-webp: $image-base-url + "/lg/background-lg.webp";
+
+#{$id} .product-shwcase {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#{$id} .product-shwcase::after {
+  content: "";
+  position: fixed;
+  top: 0; // 33px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url($image-url-sm);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 39%;
+  z-index: 0;
+
+  // image optimization
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  // force gpu acceleration
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+@media screen and (min-width: 768px) {
+  #{$id} .product-shwcase {
+    height: 40vh;
+  }
+
+  #{$id} .product-shwcase::after {
+    background-image: url($image-url-md);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #{$id} .product-shwcase {
+    height: 65vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #{$id} .product-shwcase::after {
+    background-image: url($image-url-lg);
+  }
+}
+
+@supports (background-image: url($image-avif-test-url)) {
+  #{$id} .product-shwcase::after {
+    background-image: url($image-url-sm-avif);
+  }
+
+  @media screen and (min-width: 768px) {
+    #{$id} .product-shwcase::after {
+      background-image: url($image-url-md-avif);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #{$id} .product-shwcase::after {
+      background-image: url($image-url-lg-avif);
+    }
+  }
+}
+
+@supports (background-image: url($image-webp-test-url)) {
+  #{$id} .product-shwcase::after {
+    background-image: url($image-url-sm-webp);
+  }
+
+  @media screen and (min-width: 768px) {
+    #{$id} .product-shwcase::after {
+      background-image: url($image-url-md-webp);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    #{$id} .product-shwcase::after {
+      background-image: url($image-url-lg-webp);
+    }
+  }
+}

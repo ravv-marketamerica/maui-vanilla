@@ -1,0 +1,27 @@
+<section class="product-card prod-card-left">
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="col-12 col-md-6 p-5 d-flex flex-column justify-content-center align-items-center -order-first -order-sm-last order-2 order-sm-1 text-center">
+        <a href="%VITE_PROD_03_URL%">
+          <picture>
+            <img src="{{image_base_url}}/sm/prod-rylie-sm.jpg" data-index="0" loading="lazy"
+              alt="Bubble Half Hoop Earrings" itemprop="image">
+          </picture>
+        </a>
+        <div class="prod-description">
+          <h3>{{ products.2.name_text }}</h3>
+          <p>{{ products.2.desc_text }}</p>
+          <p class="prod-material">{{ products.2.mat_text }}</p>
+        </div>
+        <a class="btn btn-primary" href="%VITE_PROD_03_URL%">{{ prod_cta_text }}</a>
+      </div>
+      <div class="col-12 col-md-6 -order-last -order-sm-first order-1 order-sm-2 noPadding">
+        <picture>
+          <img src="{{image_base_url}}/sm/model-rylie-02-sm.jpg" data-index="0" loading="lazy"
+            alt="Model wearing Rylie earrings" itemprop="image">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+{
+  "hero_headline_text": "On the Coast Edit",
+  "hero_subheadline_text": "",
+  "banner_headline_text": "Take the carefree shimmer of the coast anywhere.",
+  "prod_cta_text": "GET YOURS",
+  "collection_cta_text": "SHOP THE ENTIRE COLLECTION",
+  "products": [
+    {
+      "name_text": "ARIEL",
+      "desc_text": "Shell Clip-on Earrings",
+      "mat_text": ""
+    },
+    {
+      "name_text": "PERLA",
+      "desc_text": "Freshwater Pearl Pendant Wheat Chain Necklace",
+      "mat_text": ""
+    },
+    {
+      "name_text": "RYLIE",
+      "desc_text": "Bubble Half Hoop Earrings",
+      "mat_text": ""
+    },
+    {
+      "name_text": "AVA",
+      "desc_text": "Dainty Freshwater Pearl Drop Lariat Necklace",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MAEVE",
+      "desc_text": "Oval Cream Opal Clip-on Earrings",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MARINA",
+      "desc_text": "Lapis Lazuli Square Hammered Clip-on Earrings",
+      "mat_text": ""
+    }
+  ]
+}

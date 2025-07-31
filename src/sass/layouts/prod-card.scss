@@ -1,0 +1,75 @@
+/*--- Prod Card ---*/
+
+#{$id} .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+#{$id} .prod-material {
+  font-style: italic;
+}
+
+#{$id} .prod-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  margin-top: 0.8em;
+}
+
+#{$id} .prod-description h3 {
+  font-size: clamp(1.6em, 5.75vw, 7em);
+  font-weight: 700;
+}
+
+#{$id} .prod-description p {
+  font-size: clamp(0.8em, 1.25vw, 7em);
+  font-weight: 400;
+}
+
+#{$id} .prod-description span {
+  font-weight: 100;
+}
+
+@media screen and (min-width: 576px) {
+  #{$id} .prod-description h3 {
+    font-size: clamp(0.8em, 5.75vw, 7em);
+  }
+
+  #{$id} .prod-card .prod-description p {
+    font-size: clamp(0.8em, 1.25vw, 7em);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #{$id} .prod-description h3 {
+    font-size: clamp(0.8em, 2.5vw, 7em);
+  }
+
+  #{$id} .prod-description p {
+    font-size: clamp(0.8em, 1.25vw, 7em);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #{$id} .prod-description {
+    margin-top: 2em;
+  }
+
+  #{$id} .prod-description h3 {
+    font-size: clamp(0.8em, 2.25vw, 7em);
+  }
+
+  #{$id} .prod-description p {
+    font-size: clamp(0.8em, 1.25vw, 7em);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #{$id} .prod-description h3 {
+    font-size: clamp(0.8em, 1.55vw, 7em);
+  }
+
+  #{$id} .prod-description p {
+    font-size: clamp(0.8em, 1vw, 7em);
+  }
+}

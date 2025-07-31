@@ -1,0 +1,26 @@
+<section class="product-card prod-card-right">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 noPadding">
+        <picture>
+          <img src="{{image_base_url}}/sm/model-marina-sm.jpg" data-index="0" loading="lazy"
+            alt="Model wearing Marina earrings" itemprop="image">
+        </picture>
+      </div>
+      <div class="col-12 col-md-6 p-5 d-flex flex-column justify-content-center align-items-center text-center">
+        <a href="%VITE_PROD_06_URL%">
+          <picture>
+            <img src="{{image_base_url}}/sm/prod-marina-sm.jpg" data-index="0" loading="lazy"
+              alt="Lapis Lazuli Square Hammered Clip-on Earrings" itemprop="image">
+          </picture>
+        </a>
+        <div class="prod-description">
+          <h3>{{ products.5.name_text }}</h3>
+          <p>{{ products.5.desc_text }}</p>
+          <p class="prod-material">{{ products.5.mat_text }}</p>
+        </div>
+        <a class="btn btn-primary" href="%VITE_PROD_06_URL%">{{ prod_cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</section>

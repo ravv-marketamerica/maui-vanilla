@@ -1,0 +1,39 @@
+{
+  "hero_headline_text": "海韻風尚臻選系列",
+  "hero_subheadline_text": "",
+  "banner_headline_text": "隨時隨地，綻放專屬海岸的閃耀自在",
+  "prod_cta_text": "即刻擁有",
+  "collection_cta_text": "購買全系列",
+  "products": [
+    {
+      "name_text": "ARIEL",
+      "desc_text": "海語貝舞夾式耳環",
+      "mat_text": ""
+    },
+    {
+      "name_text": "PERLA",
+      "desc_text": "珍珠麥穗項鍊",
+      "mat_text": ""
+    },
+    {
+      "name_text": "RYLIE",
+      "desc_text": "鑲鑽甜甜圈耳環",
+      "mat_text": ""
+    },
+    {
+      "name_text": "AVA",
+      "desc_text": "流光單鑽垂墜珍珠項鍊",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MAEVE",
+      "desc_text": "蛋白石橢圓夾式耳環",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MARINA",
+      "desc_text": "青金石方形夾式耳環",
+      "mat_text": ""
+    }
+  ]
+}

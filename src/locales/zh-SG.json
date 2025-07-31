@@ -1,0 +1,39 @@
+{
+  "hero_headline_text": "海韵风尚臻选系列",
+  "hero_subheadline_text": "",
+  "banner_headline_text": "海岸风韵，随行闪耀",
+  "prod_cta_text": "即刻拥有",
+  "collection_cta_text": "购买完整系列",
+  "products": [
+    {
+      "name_text": "ARIEL",
+      "desc_text": "海语贝舞夹式耳环",
+      "mat_text": ""
+    },
+    {
+      "name_text": "PERLA",
+      "desc_text": "珍珠麦穗项链",
+      "mat_text": ""
+    },
+    {
+      "name_text": "RYLIE",
+      "desc_text": "镶钻甜甜圈耳环",
+      "mat_text": ""
+    },
+    {
+      "name_text": "AVA",
+      "desc_text": "流光单钻垂坠珍珠项链",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MAEVE",
+      "desc_text": "蛋白石椭圆夹式耳环",
+      "mat_text": ""
+    },
+    {
+      "name_text": "MARINA",
+      "desc_text": "青金石方形夹式耳环",
+      "mat_text": ""
+    }
+  ]
+}

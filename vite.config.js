@@ -4,6 +4,7 @@ import { resolve } from "path";
 import path from "path";
 
 import handlebars from "vite-plugin-handlebars";
+import { loadLocaleData } from "./scripts/locale-loader.js";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import viteCssMediaQueryExtractor from "./plugins/vite-plugin-css-media-query-extractor";
@@ -16,11 +17,14 @@ import viteCssAtSupportInjector from "./plugins/vite-plugin-css-@support-injecto
 import viteCssAtSupportOptimizer from "./plugins/vite-plugin-css-@support-optimizer";
 import viteCssMediaQueryInjector from "./plugins/vite-plugin-css-media-query-injector";
 import viteCopyHtmlToDeliverables from "./plugins/vite-plugin-copy-html-to-deliverables";
-import viteJsInline from "./plugins/vite-plugin-js-inline";
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(async ({ command, mode }) => {
   // Load environment variables from .env file
   const env = loadEnv(mode, process.cwd(), "");
+
+  // Load locale data based on environment language
+  const currentLang = env.VITE_LANG || "en";
+  const localeData = await loadLocaleData(currentLang);
 
   return {
     // vite start serves this file
@@ -54,18 +58,16 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       handlebars({
-        partialDirectory: resolve(__dirname, "src/partials"),
+        partialDirectory: resolve(__dirname, "src/sections"),
         context: {
           image_base_url: env.VITE_IMAGE_BASE_URL,
+          ...localeData,
         },
       }),
       createHtmlPlugin({
         minify: false,
       }),
       viteSingleFile(),
-      viteJsInline({
-        minify: false,
-      }),
       viteCssMediaQueryExtractor(),
       viteCssMediaQueryOptimizer(),
       viteCssMediaQueryInjector(),
@@ -73,16 +75,10 @@ export default defineConfig(({ command, mode }) => {
       viteCssAtSupportOptimizer(),
       viteCssAtSupportInjector(),
       viteCssPictureTransformer(),
-      viteHtmlCleanup(),
-      viteHtmlPrettier({
-        htmlFile: "index.html",
-        prettierOptions: {
-          printWidth: 120,
-        },
-      }),
       viteHtmlRenamer({
         newName: env.VITE_OUTPUT_FILE_NAME,
       }),
+      viteHtmlCleanup(),
       viteCopyHtmlToDeliverables(),
     ],
   };

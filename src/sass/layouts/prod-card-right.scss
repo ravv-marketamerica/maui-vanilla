@@ -1,0 +1,12 @@
+/*--- Prod Card Right ---*/
+
+#{$id} .prod-card-right {
+  @include bg-blur;
+}
+
+@media screen and (min-width: 576px) {
+  #{$id} .prod-card-right .contentBox {
+    height: 35%;
+    padding: 20px;
+  }
+}
