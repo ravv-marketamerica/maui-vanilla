@@ -78,6 +78,9 @@ function transformPictureTags() {
             const originalSrc = imgTag.getAttribute("src");
             if (!originalSrc) return;
 
+            // Add lazy loading to the img tag
+            imgTag.setAttribute("loading", "lazy");
+
             // Extract path components
             const srcParts = originalSrc.split("/");
             const filename = srcParts[srcParts.length - 1];
@@ -167,7 +170,7 @@ function transformPictureTags() {
           await fs.writeFile(htmlPath, root.toString());
 
           console.log(
-            "[picture-transformer] Successfully transformed picture tags"
+            "[picture-transformer] Successfully transformed picture tags with lazy loading"
           );
         } catch (error) {
           console.error("[picture-transformer] Error:", error);

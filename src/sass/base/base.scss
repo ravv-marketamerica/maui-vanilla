@@ -28,6 +28,135 @@ header + main {
   white-space: normal !important;
 }
 
+/* -- end -- */
+
+/*More shop fixes*/
 #{$id} .marg-6top {
   margin-bottom: -6px;
+}
+
+#{$id} {
+  position: relative;
+  color: #000000;
+  font-family: "Montserrat", "gotham", "helvetica", sans-serif;
+  font-size: $font-size;
+  line-height: 1.4;
+  margin: -5px 0 -10px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#{$id} * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#{$id} h1,
+#{$id} h2,
+#{$id} h3,
+#{$id} h4,
+#{$id} h5,
+#{$id} h6 {
+  color: #000000;
+  font-family: $font-family;
+  line-height: 1.4;
+  margin: 0;
+}
+
+#{$id} h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+#{$id} h2 {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+#{$id} h3 {
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+#{$id} h4 {
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+#{$id} img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+#{$id} p {
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+#{$id} section {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#{$id} .noPadding {
+  padding: 0;
+}
+
+#{$id} .btn {
+  border: none;
+  padding: 0 10px;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 3px solid $black;
+  font-size: 1em;
+  color: #000000;
+  font-weight: 500;
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+#{$id} .btn:hover {
+  color: #777777;
+  border-bottom: 3px solid #777777;
+}
+
+#{$id} .bggray {
+  background-color: #f2f2f2;
+}
+
+@media screen and (min-width: 768px) {
+  #{$id} {
+    margin: -5px 0 -20px 0;
+  }
+
+  #{$id} p {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  #{$id} {
+    margin: -5px 0 -45px 0;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #{$id} {
+    margin: -5px 0 0 0;
+  }
 }

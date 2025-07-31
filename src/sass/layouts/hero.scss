@@ -1,44 +1,217 @@
 /*--- Hero ---*/
 
 // mobile
-$image-url-sm: $image-base-url + "/sm/hero-sm.jpg";
-$image-url-sm-avif: $image-base-url + "/sm/hero-sm.avif";
-$image-url-sm-webp: $image-base-url + "/sm/hero-sm.webp";
+$image-url-sm: $image-base-url + "/sm/hero-02-sm.jpg";
+$image-url-sm-avif: $image-base-url + "/sm/hero-02-sm.avif";
+$image-url-sm-webp: $image-base-url + "/sm/hero-02-sm.webp";
 
 // tablets
-$image-url-md: $image-base-url + "/md/hero-md.jpg";
-$image-url-md-avif: $image-base-url + "/md/hero-md.avif";
-$image-url-md-webp: $image-base-url + "/md/hero-md.webp";
+$image-url-md: $image-base-url + "/md/hero-02-md.jpg";
+$image-url-md-avif: $image-base-url + "/md/hero-02-md.avif";
+$image-url-md-webp: $image-base-url + "/md/hero-02-md.webp";
 
 // large screens
-$image-url-lg: $image-base-url + "/lg/hero-lg.jpg";
-$image-url-lg-avif: $image-base-url + "/lg/hero-lg.avif";
-$image-url-lg-webp: $image-base-url + "/lg/hero-lg.webp";
+$image-url-lg: $image-base-url + "/lg/hero-02-lg.jpg";
+$image-url-lg-avif: $image-base-url + "/lg/hero-02-lg.avif";
+$image-url-lg-webp: $image-base-url + "/lg/hero-02-lg.webp";
 
-#{$id} .hero {
+#{$id} .Hero {
   background-image: url($image-url-sm);
-  background-size: 130%;
+  background-size: cover;
   background-position: 80% 20%;
   background-repeat: no-repeat;
   background-color: #1d1314;
   padding-top: 0vh;
-  padding-bottom: 30vh;
+
+  min-height: 480px;
+  // padding-bottom: 20vh;
   overflow: hidden;
+
+  // image optimization
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  // force gpu acceleration
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-@media only screen and (min-width: 576px) {
+#{$id} .Hero .logo {
+  width: 35%;
+  min-width: 150px;
+  margin: 0 0 2rem 0;
 }
 
-@media (min-width: 768px) {
+#{$id} .Hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(
+    0deg,
+    #16121000 5%,
+    #161210bd 50%,
+    #15110f 90%
+  );
+  z-index: 0;
 }
 
-@media (min-width: 992px) {
+#{$id} .Hero .container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+#{$id} .Hero p {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+#{$id} .Hero h1 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(0.5em, 7.6vw, 7em);
+  font-weight: 100;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#{$id} .Hero h1 b {
+  font-size: 0.7em;
+  font-weight: 300;
+}
+
+#{$id} .Hero h3 {
+  font-size: clamp(0.5em, 3.5vw, 7em);
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 576px) {
+  #{$id} .Hero {
+    background-size: 100%;
+    background-position: 0% 85%;
+    padding-top: 1vh;
+    padding-bottom: 6vh;
+    min-height: 640px;
+  }
+
+  #{$id} .Hero::after {
+    height: 100%;
+    background-image: linear-gradient(
+      0deg,
+      #16121000 45%,
+      #161210bd 75%,
+      #15110f 100%
+    );
+  }
+
+  #{$id} .Hero .logo {
+    margin: 0 0 1.5em 0;
+  }
+
+  #{$id} .Hero h1 {
+    font-size: clamp(0.5em, 6.75vw, 7em);
+    text-align: left;
+  }
+
+  #{$id} .Hero h3 {
+    font-size: clamp(0.5em, 3.5vw, 7em);
+    text-align: left;
+  }
+
+  #{$id} .heroBox img {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #{$id} .Hero {
+    background-image: url($image-url-md);
+  }
+
+  #{$id} .Hero::after {
+    background-image: linear-gradient(
+      -45deg,
+      #16121000 45%,
+      #161210bd 75%,
+      #15110f 100%
+    );
+  }
+
+  #{$id} .Hero .logo {
+    margin: 0 0 2.5em 0;
+  }
+
+  #{$id} .Hero h1 {
+    font-size: clamp(0.5em, 6.75vw, 7em);
+    text-align: left;
+  }
+
+  #{$id} .Hero h3 {
+    font-size: clamp(0.5em, 2.5vw, 7em);
+    text-align: left;
+  }
+
+  #{$id} .heroBox img {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #{$id} .Hero {
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+  }
+
+  #{$id} .Hero h1 {
+    font-size: clamp(0.5em, 5.65vw, 7em);
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  #{$id} .Hero {
+    padding-top: 12vw;
+    padding-bottom: 12vw;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  #{$id} .Hero {
+    background-image: url($image-url-lg);
+  }
+
+  #{$id} .Hero h3 {
+    font-size: clamp(0.5em, 1.75vw, 7em);
+    text-align: right;
+  }
 }
 
-@media (min-width: 1400px) {
+@media screen and (min-width: 1366px) {
+  #{$id} .Hero {
+    padding-top: 13vw;
+    padding-bottom: 13vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #{$id} .Hero {
+    padding-top: 14vw;
+    padding-bottom: 14vw;
+  }
 }
 
 @supports (background-image: url($image-avif-test-url)) {
