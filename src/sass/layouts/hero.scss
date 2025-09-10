@@ -27,20 +27,7 @@ $image-url-lg-webp: $image-base-url + "/lg/hero-02-lg.webp";
   // padding-bottom: 20vh;
   overflow: hidden;
 
-  // image optimization
-  will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: high-quality;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-
-  // force gpu acceleration
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  @include image-optimization-and-gpu-acceleration;
 }
 
 #{$id} .Hero .logo {
@@ -85,6 +72,10 @@ $image-url-lg-webp: $image-base-url + "/lg/hero-02-lg.webp";
   letter-spacing: 0.05em;
   text-align: center;
   margin-bottom: 20px;
+
+  @if ($lang == "zh-TW") {
+    white-space: nowrap;
+  }
 }
 
 #{$id} .Hero h1 b {

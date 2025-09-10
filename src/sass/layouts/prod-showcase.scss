@@ -27,30 +27,17 @@ $image-url-lg-webp: $image-base-url + "/lg/background-lg.webp";
 #{$id} .product-shwcase::after {
   content: "";
   position: fixed;
-  top: 0; // 33px;
+  top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: url($image-url-sm);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 39%;
   z-index: 0;
 
-  // image optimization
-  will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: high-quality;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-
-  // force gpu acceleration
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  @include image-optimization-and-gpu-acceleration;
 }
 
 @media screen and (min-width: 768px) {

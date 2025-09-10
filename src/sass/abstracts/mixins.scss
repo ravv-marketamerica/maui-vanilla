@@ -5,3 +5,20 @@
   backdrop-filter: blur(23px);
   /* This line activates blur*/
 }
+
+@mixin image-optimization-and-gpu-acceleration() {
+  // image optimization
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  // force gpu acceleration
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}

@@ -5,6 +5,7 @@ import path from "path";
 
 import handlebars from "vite-plugin-handlebars";
 import { loadLocaleData } from "./scripts/locale-loader.js";
+import localeWatcher from "./plugins/vite-plugin-locale-watcher.js";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import viteCssMediaQueryExtractor from "./plugins/vite-plugin-css-media-query-extractor";
@@ -17,6 +18,7 @@ import viteCssAtSupportInjector from "./plugins/vite-plugin-css-@support-injecto
 import viteCssAtSupportOptimizer from "./plugins/vite-plugin-css-@support-optimizer";
 import viteCssMediaQueryInjector from "./plugins/vite-plugin-css-media-query-injector";
 import viteCopyHtmlToDeliverables from "./plugins/vite-plugin-copy-html-to-deliverables";
+import viteCleanDist from "./plugins/vite-plugin-clean-dist";
 import viteHtmlPrettier from "./plugins/vite-plugin-html-prettier";
 
 export default defineConfig(async ({ command, mode }) => {
@@ -58,6 +60,7 @@ export default defineConfig(async ({ command, mode }) => {
       },
     },
     plugins: [
+      localeWatcher(),
       handlebars({
         partialDirectory: resolve(__dirname, "src/sections"),
         context: {
@@ -76,7 +79,6 @@ export default defineConfig(async ({ command, mode }) => {
       viteCssAtSupportOptimizer(),
       viteCssAtSupportInjector(),
       viteCssPictureTransformer(),
-      viteHtmlCleanup(),
       viteHtmlPrettier({
         htmlFile: "index.html",
         prettierOptions: {
@@ -86,7 +88,9 @@ export default defineConfig(async ({ command, mode }) => {
       viteHtmlRenamer({
         newName: env.VITE_OUTPUT_FILE_NAME,
       }),
+      viteHtmlCleanup(),
       viteCopyHtmlToDeliverables(),
+      viteCleanDist(),
     ],
   };
 });

@@ -1,6 +1,9 @@
 // JIRA ID
 $id: "#" + $env-jira-id;
 
+// Language
+$lang: $env-lang;
+
 // Images
 $image-base-url: $env-image-base-url;
 $image-webp-test-url: "data:image/webp;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";

@@ -1,11 +1,21 @@
-/*--- Base ---*/
+/*--- Custom Site Fixes Starts Here ---*/
 
-/* layered site fixes */
+/*--- Layered Fixes ---*/
 :not(style):not(link):not(meta):not(script) ~ section {
   margin-top: 0;
 }
 
-/* UF fixes*/
+.testing {
+  border: 5px solid red !important;
+}
+
+/**-- Main Padding Fixes --*/
+.js-main.s-main.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/*--- UF Fixes ---*/
 header + main {
   margin-top: 0 !important;
 }
@@ -14,9 +24,24 @@ header + main {
   margin-top: 0 !important;
 }
 
-/* for SHOP.COM */
+/*--- Shop Fixes ---*/
+#page {
+  padding-bottom: 0 !important;
+}
+
+.main-content {
+  padding-top: 140px !important;
+  top: 0 !important;
+}
+
 .subheader-nav {
   margin-bottom: 0 !important;
+}
+
+#footer {
+  -webkit-transform: initial !important;
+  -ms-transform: initial !important;
+  transform: initial !important;
 }
 
 #footer .link-to .link-to-page {
@@ -28,13 +53,11 @@ header + main {
   white-space: normal !important;
 }
 
-/* -- end -- */
-
-/*More shop fixes*/
 #{$id} .marg-6top {
   margin-bottom: -6px;
 }
 
+/*--- Base Styles Starts Here ---*/
 #{$id} {
   position: relative;
   color: #000000;
@@ -137,6 +160,16 @@ header + main {
 
 #{$id} .bggray {
   background-color: #f2f2f2;
+}
+
+#{$id} .mobile-break {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  #{$id} .mobile-break {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 768px) {

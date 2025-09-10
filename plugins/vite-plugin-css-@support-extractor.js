@@ -115,16 +115,22 @@ function extractSupport() {
             const css = styleTag.textContent;
             let processedCSS = css;
             let lastIndex = 0;
-            const mediaQueryMatches = [];
+            const supportMatches = [];
 
-            // Find all top-level support
+            // Find all top-level @supports rules
             while (true) {
-              const supportStart = processedCSS.indexOf("@support", lastIndex);
+              const supportStart = processedCSS.indexOf("@supports", lastIndex);
               if (supportStart === -1) break;
 
-              // Skip if this media query is nested inside another at-rule
-              if (isInsideAtRule(processedCSS, supportStart)) {
-                lastIndex = supportStart + 6; // length of '@media'
+              // Skip if this @supports rule is nested inside another at-rule
+              if (
+                isInsideAtRule(processedCSS, supportStart, [
+                  "@keyframes",
+                  "@font-face",
+                  "@media",
+                ])
+              ) {
+                lastIndex = supportStart + 9; // length of '@supports'
                 continue;
               }
 
@@ -137,12 +143,13 @@ function extractSupport() {
               );
               if (closeIndex === -1) break;
 
-              const mediaQuery = processedCSS.substring(
+              const supportRule = processedCSS.substring(
                 supportStart,
                 closeIndex
               );
-              mediaQueryMatches.push({
-                content: mediaQuery,
+
+              supportMatches.push({
+                content: supportRule,
                 start: supportStart,
                 end: closeIndex,
               });
@@ -150,15 +157,15 @@ function extractSupport() {
               lastIndex = closeIndex;
             }
 
-            // Add found support to the set
-            mediaQueryMatches.forEach((query) => support.add(query.content));
+            // Add found @supports rules to the set
+            supportMatches.forEach((rule) => support.add(rule.content));
 
-            // Remove support from the original CSS
+            // Remove @supports rules from the original CSS
             let newCSS = processedCSS;
-            // Remove queries from end to start to maintain correct indices
-            mediaQueryMatches.reverse().forEach((query) => {
+            // Remove rules from end to start to maintain correct indices
+            supportMatches.reverse().forEach((rule) => {
               newCSS =
-                newCSS.substring(0, query.start) + newCSS.substring(query.end);
+                newCSS.substring(0, rule.start) + newCSS.substring(rule.end);
             });
 
             // Clean up empty lines and extra spaces
